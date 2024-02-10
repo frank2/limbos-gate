@@ -3,9 +3,9 @@
 #include <windows.h>
 #include "headers.h"
 
-extern "C" void __fastcall limbo_hell(uintptr_t callback);
-extern "C" void __fastcall limbos_gate(uint32_t syscall);
-extern "C" limbo_descent();
+extern void __fastcall limbo_hell(uintptr_t callback);
+extern void __fastcall limbos_gate(uint32_t syscall);
+extern limbo_descent();
 
 typedef struct __IATEntry
 {
