@@ -126,7 +126,7 @@ int main(int argc, char *argv[])
 
    NTSTATUS status;
    const char shellcode[] = "\x90\x90\x90\x90\xcc\xcc\xcc\xcc\xc3";
-   uint8_t *allocation;
+   uint8_t *allocation = NULL;
    size_t allocation_size = sizeof(shellcode);
    limbos_gate(iat.NtAllocateVirtualMemory.target.syscall);
    status = (NTSTATUS)(limbo_descent((HANDLE)-1, &allocation, 0, &allocation_size, MEM_COMMIT, PAGE_READWRITE));
