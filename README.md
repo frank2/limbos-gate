@@ -55,6 +55,7 @@ Once everything is installed, simply execute the following commands in the repo'
 
 ```
 $ mkdir build
+$ cd build
 $ cmake ../ -A Win32
 $ cmake --build ./ --config Release
 ```
