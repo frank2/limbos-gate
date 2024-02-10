@@ -8,6 +8,7 @@ limbo_syscall:
 section .text
 [BITS 32]
 
+   ; I really hate msvc function decoration even in C, fucking lol
 global @limbo_hell@4
 @limbo_hell@4:
    mov [limbo_callback], ecx

@@ -5,4 +5,4 @@ if (("${CMAKE_GENERATOR_PLATFORM}" STREQUAL "" AND NOT CMAKE_SIZEOF_VOID_P EQUAL
 endif()
 
 project(limbos_gate C ASM_NASM)
-add_executable(limbos_gate main.c limbosgate.asm)
+add_executable(limbos_gate limbosgate.asm main.c)
