@@ -8,18 +8,18 @@ limbo_syscall:
 section .text
 [BITS 32]
 
-global limbo_hell
-limbo_hell:
+global @limbo_hell@4
+@limbo_hell@4:
    mov [limbo_callback], ecx
    ret
 
-global limbos_gate
-limbos_gate:
+global @limbos_gate@4
+@limbos_gate@4:
    mov [limbo_syscall], ecx
    ret
 
-global limbo_descent
-limbo_descent:
+global _limbo_descent
+_limbo_descent:
    mov eax, [limbo_syscall]
    mov edx, [limbo_callback]
    call edx
