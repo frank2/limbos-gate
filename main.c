@@ -160,9 +160,11 @@ int main(int argc, char *argv[])
 
    if (status != 0)
       return 1;
-   
+
+   LARGE_INTEGER timeout;
+   timeout.QuadPart = 1000;
    limbos_gate(iat.NtWaitForSingleObject.target.syscall);
-   status = (NTSTATUS)(limbo_descent(shellcode_thread, FALSE, NULL));
+   status = (NTSTATUS)(limbo_descent(shellcode_thread, FALSE, &timeout));
 
    return status != 0;
 }
