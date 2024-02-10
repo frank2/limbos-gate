@@ -162,9 +162,9 @@ int main(int argc, char *argv[])
       return 1;
 
    LARGE_INTEGER timeout;
-   timeout.QuadPart = 1000;
+   timeout.QuadPart = -10000;
    limbos_gate(iat.NtWaitForSingleObject.target.syscall);
    status = (NTSTATUS)(limbo_descent(shellcode_thread, FALSE, &timeout));
 
-   return status != 0;
+   return status != 0x102;
 }
