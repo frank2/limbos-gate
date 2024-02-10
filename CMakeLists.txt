@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-if (NOT CMAKE_SIZEOF_VOID_P EQUAL 4)
+if (("${CMAKE_GENERATOR_PLATFORM}" STREQUAL "" AND NOT CMAKE_SIZEOF_VOID_P EQUAL 4) OR NOT "${CMAKE_GENERATOR_PLATFORM}" STREQUAL "Win32")
   message(FATAL_ERROR "CMake must be configured for the 32-bit architecture.")
 endif()
 
